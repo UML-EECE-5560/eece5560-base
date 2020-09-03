@@ -16,7 +16,7 @@ Place your code in the directory `/packages/` of
 your new repository.
 
 
-### 5. Setup launchers
+### Setup launchers
 
 The directory `/launchers` can contain as many launchers (launching scripts)
 as you want. A default launcher called `default.sh` must always be present.
