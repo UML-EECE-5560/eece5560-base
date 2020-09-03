@@ -1,33 +1,16 @@
-# Template: template-ros
+# Template: eece5560-baee
 
 This template provides a boilerplate repository
 for developing ROS-based software in Duckietown.
-
-**NOTE:** If you want to develop software that does not use
-ROS, check out [this template](https://github.com/duckietown/template-basic).
-
+Use it for UML EECE 5560
 
 ## How to use it
-
-### 1. Fork this repository
-
-Use the fork button in the top-right corner of the github page to fork this template repository.
-
-
-### 2. Create a new repository
 
 Create a new repository on github.com while
 specifying the newly forked template repository as
 a template for your new repository.
 
-
-### 3. Define dependencies
-
-List the dependencies in the files `dependencies-apt.txt`,
-`dependencies-py.txt`, and `dependencies-py3.txt`.
-
-
-### 4. Place your code
+### Place your code
 
 Place your code in the directory `/packages/` of
 your new repository.
