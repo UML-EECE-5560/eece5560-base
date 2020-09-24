@@ -31,6 +31,7 @@ ARG LAUNCHER
 RUN dt-build-env-check "${REPO_NAME}" "${MAINTAINER}" "${DESCRIPTION}"
 
 # define/create repository path
+ARG COURSE_PATH="${CATKIN_WS_DIR}/src/eece5560"
 ARG REPO_PATH="${CATKIN_WS_DIR}/src/${REPO_NAME}"
 ARG LAUNCH_PATH="${LAUNCH_DIR}/${REPO_NAME}"
 RUN mkdir -p "${REPO_PATH}"
@@ -56,6 +57,7 @@ RUN pip3 install --use-feature=2020-resolver -r ${REPO_PATH}/dependencies-py3.tx
 
 # copy the source code
 COPY ./packages "${REPO_PATH}/packages"
+COPY ./eece5560/. "${COURSE_PATH}"
 
 # build packages
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \

@@ -4,6 +4,7 @@
 # Allow files and directories
 !assets
 !packages
+!eece5560
 !dependencies-apt.txt
 !dependencies-py3.txt
 !launchers

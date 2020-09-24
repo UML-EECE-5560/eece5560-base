@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg="example_service" name="fibonacci_service" type="example_service_node.py"/>
+
+</launch>
