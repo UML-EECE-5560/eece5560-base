@@ -56,8 +56,8 @@ COPY ./dependencies-py3.txt "${REPO_PATH}/"
 RUN pip3 install --use-feature=2020-resolver -r ${REPO_PATH}/dependencies-py3.txt
 
 # copy the source code
-COPY ./packages "${REPO_PATH}/packages"
-COPY ./eece5560/. "${COURSE_PATH}"
+#COPY ./packages "${REPO_PATH}/packages"
+#COPY ./eece5560/. "${COURSE_PATH}"
 
 # build packages
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
