@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="controls_hw" name="vehicle_dynamics" type="vehicle_dynamics.py"/>
+</launch>
