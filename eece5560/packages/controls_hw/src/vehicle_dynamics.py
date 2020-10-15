@@ -57,6 +57,11 @@ if __name__ == '__main__':
                 rate.sleep()
                 start_time = rospy.get_time()
                 continue
+                time_elapsed = rospy.get_time() - start_time
+            # quit after 30 sec of running
+            if time_elapsed > 30:
+                rospy.set_param("controller_ready", "false")
+                exit()
             vd.iterate(0.001)
             pub_xd.publish(vd.xd)
             pub_x.publish(vd.x)
