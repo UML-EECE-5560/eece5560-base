@@ -1,0 +1,7 @@
+<launch>
+
+    <param name="/odom_csv_file_name" value="$(find odometry_hw)/wheel_ticks.csv" />
+    <node pkg="odometry_hw" name="wheel_tick_pub" type="wheel_tick_pub.py"/>
+    <node pkg="rosbag" name="record" type="record" args="record -O odom_hw.bag /dist_wheel" />
+
+</launch>
