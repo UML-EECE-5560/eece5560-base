@@ -7,8 +7,17 @@ from odometry_hw.msg import DistWheel
 if __name__ == "__main__":
     rospy.init_node('wheel_tick_pub', anonymous=True)
     pub = rospy.Publisher("dist_wheel", DistWheel queue_size=10)
-    rospy.sleep(5)
     rate = rospy.Rate(10) # 10hz
+
+    math_ready = False
+    plot_ready = False
+    while not rospy.is_shutdown() and not ready:
+        if rospy.has_param("odom_ready"):
+            ready = (rospy.get_param("odom_ready") == "true") and (rospy.get_param("plot_ready") == "true")
+        if not ready:
+            rospy.logwarn("Waiting for odom node to be ready")
+            rate.sleep()
+
     csv_file_name = "wheel_ticks.csv"
     if rospy.has_param("/odom_csv_file_name"):
         csv_file_name = rospy.get_param("/odom_csv_file_name")

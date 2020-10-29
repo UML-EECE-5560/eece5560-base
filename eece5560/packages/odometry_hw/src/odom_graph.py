@@ -17,12 +17,20 @@ if __name__ == '__main__':
     try:
         rospy.init_node('odom_graph', anonymous=True)
         output_to_file = False
-        if rospy.has_param('output_to_file'):
-            if rospy.get_param('output_to_file') == True:
+        if rospy.has_param('/output_to_file'):
+            rospy.logwarn("Has output to file")
+            if rospy.get_param('/output_to_file') == "true":
                 output_to_file=True
-        if rospy.has_param('only_output_to_file'):
-            rospy.logwarn("only")
-            matplotlib.use("pdf")
+        if rospy.has_param('/only_output_to_file'):
+            rospy.logwarn("Has only output to file")
+            rospy.logwarn(rospy.get_param('/only_output_to_file'))
+            if rospy.get_param('/only_output_to_file') == "true":
+                rospy.logwarn("only outputting to PDF!")
+                output_to_file=True
+                matplotlib.use("pdf")
+        if rospy.has_param('output_folder'):
+            folder = rospy.get_param('output_folder')
+                                
         import matplotlib.pyplot as plt
         og = OdomGraph()
         rospy.Subscriber("pose", Pose2D, og.pose_cb)
@@ -33,7 +41,8 @@ if __name__ == '__main__':
             plt.xlabel('x (m)')
             plt.ylabel('y (m)')
             plt.title('Vehicle Odometry')
-            plt.savefig("output_plot.png")
+            if output_to_file:
+                plt.savefig(folder + "/output_plot.png")
             plt.pause(0.05)        
             rate.sleep()
     except rospy.ROSInterruptException:

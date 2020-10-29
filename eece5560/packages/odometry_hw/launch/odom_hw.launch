@@ -1,5 +1,4 @@
 <launch>
-    <param name="output_to_file" type="bool" value="true" />
     <node pkg="rosbag" name="player" type="play" args="-d 5 --clock $(find odometry_hw)/odom_hw.bag" />
     <node pkg="odometry_hw" name="odom_graph" type="odom_graph.py"/>
 </launch>
