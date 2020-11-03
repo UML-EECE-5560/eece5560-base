@@ -28,6 +28,7 @@ if __name__ == '__main__':
                 rospy.logwarn("only outputting to PDF!")
                 output_to_file=True
                 matplotlib.use("pdf")
+        folder = "."
         if rospy.has_param('output_folder'):
             folder = rospy.get_param('output_folder')
                                 
