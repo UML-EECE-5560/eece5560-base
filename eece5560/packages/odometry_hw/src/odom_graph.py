@@ -19,12 +19,11 @@ if __name__ == '__main__':
         output_to_file = False
         if rospy.has_param('/output_to_file'):
             rospy.logwarn("Has output to file")
-            if rospy.get_param('/output_to_file') == "true":
+            if rospy.get_param('/output_to_file') == True or rospy.get_param('/output_to_file') == "true":
                 output_to_file=True
         if rospy.has_param('/only_output_to_file'):
             rospy.logwarn("Has only output to file")
-            rospy.logwarn(rospy.get_param('/only_output_to_file'))
-            if rospy.get_param('/only_output_to_file') == "true":
+            if rospy.get_param('/only_output_to_file') == True or rospy.get_param('/only_output_to_file') == "true":
                 rospy.logwarn("only outputting to PDF!")
                 output_to_file=True
                 matplotlib.use("pdf")
