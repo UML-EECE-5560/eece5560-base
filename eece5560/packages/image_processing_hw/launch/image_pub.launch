@@ -1,0 +1,4 @@
+<launch>
+    <node name="rqt_image_view" pkg="rqt_image_view" type="rqt_image_view" args="/image" />
+    <node name="image_pub" pkg="image_processing_hw" type="image_pub.py" args="$(find image_processing_hw)/sample_images/image0.png" />
+</launch>
