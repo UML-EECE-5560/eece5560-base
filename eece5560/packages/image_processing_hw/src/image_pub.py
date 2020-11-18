@@ -8,8 +8,8 @@ from cv_bridge import CvBridge
 
 if __name__=="__main__":
     if len(sys.argv) < 1:
-        print "ERROR incorrect number of arguments"
-        print "Usage: %s <image filename>" % sys.argv[0]
+        print("ERROR incorrect number of arguments")
+        print("Usage: %s <image filename>" % sys.argv[0])
         exit()
     
     # get the filename from the command line
