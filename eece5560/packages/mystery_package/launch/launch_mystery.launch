@@ -1,0 +1,7 @@
+<launch>
+
+  <group ns="mystery">
+    <node pkg="mystery_package" name="mystery_node" type="mystery_node.py"/>
+  </group>
+  
+</launch>
