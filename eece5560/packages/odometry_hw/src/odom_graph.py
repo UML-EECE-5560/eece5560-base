@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import rospy
-from odometry_hw.msg import Pose2D
+from duckietown_msgs.msg import Pose2D
 import matplotlib
 
 class OdomGraph:
