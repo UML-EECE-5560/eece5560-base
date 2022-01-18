@@ -2,6 +2,7 @@
 
   <group ns="mystery">
     <node pkg="mystery_package" name="mystery_node" type="mystery_node.py"/>
+    <node pkg="mystery_package" name="unit_listener" type="unit_listener.py"/>
   </group>
   
 </launch>
