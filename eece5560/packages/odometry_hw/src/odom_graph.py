@@ -37,7 +37,7 @@ if __name__ == '__main__':
         rate = rospy.Rate(10) # 10hz
         while not rospy.is_shutdown():     
             plt.plot(og.x_list, og.y_list,'ro-',)
-            plt.axis([-0.5,1.5,-1,1])
+            plt.axis([-0.5,5,-0.5,5])
             plt.xlabel('x (m)')
             plt.ylabel('y (m)')
             plt.title('Vehicle Odometry')
