@@ -62,8 +62,13 @@ if __name__ == '__main__':
         rate = rospy.Rate(1.0/time_step)
         # run vehicle dynamics for ~10 seconds
         start_time = rospy.get_time()
+        updated_desired = False
         while not rospy.is_shutdown():
             time_elapsed = rospy.get_time() - start_time
+            if not updated_desired and time_elapsed > 15:
+                updated_desired = True
+                desired += 30
+                
             # quit after 30 sec of running
             if time_elapsed > 30:
                 rospy.set_param("controller_ready", "false")
