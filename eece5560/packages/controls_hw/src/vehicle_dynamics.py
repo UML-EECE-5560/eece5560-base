@@ -45,17 +45,17 @@ if __name__ == '__main__':
         # wait until param says controller is ready
         while not rospy.is_shutdown():
             if rospy.has_param("controller_ready"):
-                if rospy.get_param("controller_ready") == "true":
+                if rospy.get_param("controller_ready") == "ready":
                     break
-            rospy.logwarn("Waiting for controller_ready to be true")
+            rospy.logwarn("Waiting for controller_ready to be 'ready'")
             rate.sleep()
         
         # wait until param says graph is ready
         while not rospy.is_shutdown():
             if rospy.has_param("graph_ready"):
-                if rospy.get_param("graph_ready") == "true":
+                if rospy.get_param("graph_ready") == "ready":
                     break
-            rospy.logwarn("Waiting for graph_ready to be true")
+            rospy.logwarn("Waiting for graph_ready to be 'ready'")
             rate.sleep()
         
         rospy.logwarn("Starting dynamics")

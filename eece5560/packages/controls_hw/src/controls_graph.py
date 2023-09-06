@@ -60,7 +60,7 @@ if __name__ == '__main__':
                                 
         import matplotlib.pyplot as plt
         cg = ControlsGraph()
-        rospy.set_param("graph_ready","true")
+        rospy.set_param("graph_ready","ready")
         rate = rospy.Rate(5) # 5hz
         while not rospy.is_shutdown():     
             plt.plot(cg.xp_list, cg.yp_list, 'b-')

@@ -48,7 +48,14 @@ if __name__ == "__main__":
     pub = rospy.Publisher("dist_wheel", DistWheel, queue_size=10)
     rate = rospy.Rate(10) # 10hz
 
-    for i in range(50):
+    while not rospy.is_shutdown():
+        if rospy.has_param("odom_ready"):
+            if rospy.get_param("odom_ready") == "ready":
+                break
+        rospy.logwarn("Waiting for odom_ready to be 'ready'")
+        rate.sleep()
+
+    for i in range(10):
         pub.publish(DistWheel(0,0))
         if rospy.is_shutdown():
             break
